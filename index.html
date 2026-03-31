@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 灵感生成器 - DeepSeek</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 学号和姓名  -->
+        <div class="student-info">
+            📚 学号：423240641 | 姓名：林昊龙
+        </div>
+
+        <h1>✨ AI 灵感生成器</h1>
+        <p class="subtitle">基于 DeepSeek API 的前沿创意助手</p>
+
+        <!-- API Key 输入区（用户自己填写） -->
+        <div class="api-section">
+            <div class="api-header">
+                <span>🔑 DeepSeek API Key</span>
+                <a href="https://platform.deepseek.com/api_keys" target="_blank" class="api-link">👉 获取 Key</a>
+            </div>
+            <input type="password" id="apiKey" placeholder="请输入你的 DeepSeek API Key" class="api-input">
+            <div class="api-note">
+                💡 你的 Key 只会保存在浏览器中，不会上传到任何服务器。<br>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="topic" placeholder="输入一个主题，例如：人工智能、环保、教育..." value="人工智能">
+            <button id="generateBtn" onclick="generateIdea()">🚀 生成创意</button>
+        </div>
+
+        <div class="param-area">
+            <label>🎨 创意温度（越高越有想象力）: <span id="tempValue">0.8</span></label>
+            <input type="range" id="temperature" min="0" max="1.5" step="0.1" value="0.8">
+        </div>
+
+        <div class="result-area" id="resultArea" style="display: none;">
+            <h3>💡 你的 AI 创意</h3>
+            <div id="ideaContent"></div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            🤔 AI 正在思考中...
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
